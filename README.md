@@ -28,7 +28,7 @@
 
 ---
 
-## Unique Features & Distinctive Encryption System / Benzersiz Ozellikler ve Ozel Sifreleme Sistemi
+## 🛠️ Unique Features & Distinctive Encryption System / Benzersiz Ozellikler ve Ozel Sifreleme Sistemi
 
 [English]
 1. Unconventional Custom Encryption and Steganographic Concealment:  
