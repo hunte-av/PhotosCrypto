@@ -1,227 +1,280 @@
-# PhotosCrypto
+<div align="center">
 
-[English] PhotosCrypto is a modern C++17 application created to keep your photos and private files safe from curious eyes. It compresses your files to save disk space and encrypts them into safe text files. You can choose to protect your files with a strong password or save them without a password for fast one-click recovery.
+# 🔒 PhotosCrypto
 
-[Turkce] PhotosCrypto, fotograflarinizi ve ozel dosyalarinizi merakli gozlerden korumak icin gelistirilmis modern bir C++17 uygulamasidir. Dosyalarinizi diskte daha az yer kaplamasi icin sikistirir ve guvenli metin dosyalarina donusturerek sifreler. Dosyalarinizi guclu bir sifreyle korumayi secebilir ya da hizli erisim icin sifresiz olarak kaydedebilirsiniz.
+**Next-Generation C++17 Secure Photo Vault & Compression Engine**  
+*Encrypt, compress, and conceal your private images into compact, authenticated symbol text files.*
 
----
+[![Language: C++17](https://img.shields.io/badge/Language-C%2B%2B17-00599C.svg?logo=c%2B%2B)](https://en.wikipedia.org/wiki/C%2B%2B17)
+[![Crypto: AES-256-GCM](https://img.shields.io/badge/Encryption-AES--256--GCM-blue.svg)](https://openssl.org)
+[![KDF: scrypt](https://img.shields.io/badge/KDF-scrypt%20128MB-blueviolet.svg)](#security-architecture)
+[![Compression: zlib](https://img.shields.io/badge/Compression-zlib%20deflate-orange.svg)](#storage-efficiency)
+[![UI: GTK4 + Libadwaita](https://img.shields.io/badge/GUI-GTK4%20%2F%20Libadwaita-emerald.svg?logo=gnome)](https://gtk.org)
+[![Packaging: Flatpak](https://img.shields.io/badge/Package-Flatpak%20Sandbox-teal.svg?logo=flatpak)](https://flatpak.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Platform: Cross-Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20macOS-black.svg)](#installation)
 
-## Detailed Features
+<br/>
 
-[English]
-1. Privacy and Security: Your files are secured using modern AES-256-GCM encryption and the scrypt key algorithm. Without the correct password, nobody can read or open your files.
-2. Built-in Data Compression: Every file is automatically compressed with zlib before encryption. This reduces the file size by 40 percent to 80 percent on typical files, saving significant storage space.
-3. Optional Password Protection: Setting a password is completely your choice. You can add a strong password or leave it empty for easy one-click restoration.
-4. Smart Format Detection: When restoring an encoded file, PhotosCrypto automatically recognizes the original file format such as PNG, JPG, WEBP, GIF, or BMP and restores it with the correct extension.
-5. Visual Password Shield: The user interface includes a dynamic 5-level security shield that guides you to create strong passwords using letters, numbers, and symbols.
-6. Clean Desktop and Command-Line Interfaces: You can use the modern GTK4 graphical interface or use the lightweight command-line tool in automated scripts.
-
-[Turkce]
-1. Gizlilik ve Guvenlik: Dosyalariniz modern AES-256-GCM sifreleme ve scrypt anahtar algoritmasi ile korunur. Dogru sifre olmadan hic kimse dosyalarinizi okuyamaz veya acamaz.
-2. Dahili Veri Sikistirma: Her dosya sifrelenmeden once zlib ile otomatik olarak sikistirilir. Bu islem yaygin dosyalarda boyutu yuzde 40 ile yuzde 80 arasinda kuculterek onemli olcude depolama alani kazandirir.
-3. Istege Bagli Sifre Korumasi: Sifre belirlemek tamamen sizin tercihinize baglidir. Guclu bir sifre ekleyebilir veya tek tikla kolayca geri yuklemek icin sifresiz kaydedebilirsiniz.
-4. Akilli Format Tanima: Sifrelenmis bir dosyayi geri cevirirken PhotosCrypto PNG, JPG, WEBP, GIF veya BMP gibi orijinal dosya turunu otomatik olarak tanir ve dogru uzantiyla kaydeder.
-5. Gorsel Guvenlik Kalkani: Kullanici arayuzu, harf, rakam ve semboller kullanarak guclu sifreler olusturmaniza rehberlik eden 5 asamali dinamik bir guvenlik kalkani icerir.
-6. Sade Masaustu ve Komut Satiri Arayuzu: Modern GTK4 grafik arayuzunu kullanabilir veya komut satiri aracini otomatik scriptlerde calistirabilirsiniz.
+> 🇹🇷 **Türkçe:** Fotoğraflarınızı ve hassas görsellerinizi modern C++17, donanım hızlandırmalı AES-256-GCM ve scrypt ile şifreler, dahili zlib ile otomatik sıkıştırıp güvenli metin dosyalarına dönüştürür. Tek ve birleşik nihai sürümdür.  
+> 🇬🇧 **English:** PhotosCrypto compresses and encrypts your photos into safe, portable text files using industry-standard cryptography. Designed for absolute privacy, memory safety, and cross-platform simplicity.
 
 ---
 
-## Performance and Architecture
+</div>
 
-[English]
-- High Speed: Core operations are written in native C++17 without heavy dependencies. Compression and encryption run in streaming memory buffers to ensure high performance on large photos.
-- Memory Efficiency: Memory allocations are controlled and cleaned up immediately after operations.
-- Strong Cryptography: Uses industry-standard OpenSSL libcrypto for authenticated encryption. If any bit in the file is modified or corrupted, PhotosCrypto detects it instantly and stops processing to protect your system.
-- Safe Storage: Encrypted outputs are created with restricted file permissions so other user accounts cannot read them.
-
-[Turkce]
-- Yuksek Hiz: Cekirdek islemler agir bagimliliklar olmadan dogrudan C++17 ile yazilmistir. Sikistirma ve sifreleme bellek tamponlari uzerinde hizla calisarak buyuk fotograflarda bile yuksek performans saglar.
-- Bellek Verimliligi: Bellek kullanimi kontrol altinda tutulur ve islemler biter bitmez guvenle temizlenir.
-- Guclu Kriptografi: Kimlik dogrulamali sifreleme icin endustri standardi OpenSSL libcrypto kullanilir. Dosyadaki tek bir bayt bile degistirilirse veya bozulursa PhotosCrypto bunu aninda fark eder ve guvenliginizi korumak icin islemi durdurur.
-- Guvenli Depolama: Sifrelenen dosyalar kisitli izinlerle olusturulur, boylece diger kullanici hesaplari bu dosyalari okuyamaz.
+## 📌 İçindekiler / Table of Contents
+1. [🌟 Öne Çıkan Özellikler / Highlights](#-öne-çıkan-özellikler--highlights)
+2. [🧠 Mimari ve Güvenlik Modeli / Architecture & Security](#-mimari-ve-güvenlik-modeli--architecture--security)
+3. [🚀 Kurulum / Installation](#-kurulum--installation)
+   - [Linux (Flatpak & Kaynak Kod)](#1-linux)
+   - [Windows (MSYS2 & WSL)](#2-windows)
+   - [macOS (Homebrew)](#3-macos)
+4. [💻 Kullanım Kılavuzu / Usage](#-kullanım-kılavuzu--usage)
+   - [Komut Satırı (CLI)](#komut-satırı-cli)
+   - [Grafik Arayüz (GTK4 GUI)](#grafik-arayüz-gtk4-gui)
+5. [🧪 Test ve Doğrulama / Tests](#-test-ve-doğrulama--tests)
+6. [📄 Lisans / License](#-lisans--license)
 
 ---
 
-## Installation Guide
+## 🌟 Öne Çıkan Özellikler / Highlights
+
+### 🇬🇧 English
+- **Single Unified Application:** Consolidates all encoding, decoding, compression, and UI features into one unified and lightweight executable family (`photoscrypto-cli` & `photoscrypto-gui`).
+- **Military-Grade Authenticated Encryption:** AES-256-GCM combined with scrypt key derivation ($N=2^{17}, r=8, p=1$, ~128 MiB RAM cost per guess) shields your images against brute-force attacks and bit tampering.
+- **Built-in zlib Compression:** Automatic compression reduces file size by **40% to 80%** prior to encryption, drastically cutting down storage space.
+- **Smart Automatic Format Detection:** Original metadata and format headers (`.png`, `.jpg`, `.jpeg`, `.webp`, `.avif`, `.heic`, `.gif`, `.bmp`) are preserved inside the encrypted payload and seamlessly restored byte-for-byte upon decoding.
+- **Optional Password Protection:** Choose between strong passphrase protection or `--no-password` high-speed obfuscated archival for instant single-click recovery.
+- **Self-Destruct Guard (Anti-Tamper):** Optional configurable threshold (`--max-attempts N`) to permanently shred and erase the file upon repeated incorrect password attempts.
+- **Dynamic 5-Level Password Shield:** Visual GTK4 indicator guiding users to create resilient passphrases mixing letters, numerals, and symbols.
+
+### 🇹🇷 Türkçe
+- **Tek ve Birleşik Uygulama:** Eski prototipleri ve ayrık yapıları tek bir çatı altında toplayan; komut satırı ve grafik arayüzü tek bir optimize kod tabanında birleştiren modern uygulama.
+- **Askeri Düzey Kimlik Doğrulamalı Şifreleme:** AES-256-GCM ve scrypt anahtar türetim fonksiyonu (tahmin başına ~128 MB RAM maliyeti) ile kaba kuvvet (brute-force) saldırılarına ve bayt tahrifatına karşı tam koruma.
+- **Dahili zlib Veri Sıkıştırması:** Şifrelemeden önce otomatik zlib sıkıştırması yaparak disk alanından **%40 ile %80** arasında tasarruf sağlar.
+- **Akıllı Format ve Dosya Türü Tanıma:** Fotoğrafın özgün formatı (`.png`, `.jpg`, `.webp`, `.avif`, `.heic`, `.gif`, `.bmp`) şifreli gövdede güvenle saklanır; geri çevrildiğinde uzantı otomatik eklenir ve bayt bayt eksiksiz geri gelir.
+- **İsteğe Bağlı Parola Koruması:** İster güçlü parola koruması uygulayın, ister tek tıkla hızlı arşivleme için `--no-password` şifresiz modunu kullanın.
+- **Kendi Kendini İmha Modu (Opsiyonel):** Belirlenen limit aşıldığında (`--max-attempts N`) yanlış şifre denemelerinde dosyayı kalıcı olarak silen koruma kalkanı.
+- **5 Seviyeli Dinamik Parola Kalkanı:** Harf, rakam ve sembol çeşitliliğine göre şifre gücünü anlık hesaplayan sezgisel arayüz göstergesi.
+
+---
+
+## 🧠 Mimari ve Güvenlik Modeli / Architecture & Security
+
+```text
+Ham Fotoğraf (Raw Photo) 
+      │
+      ▼
+┌──────────────────────────────────────────────┐
+│ 1. Akıllı Format ve Meta Veri Çıkarımı       │
+└──────────────────────────────────────────────┘
+      │
+      ▼
+┌──────────────────────────────────────────────┐
+│ 2. zlib Deflate Sıkıştırma Bellek Tamponu    │ (Boyut %40-%80 Küçülür)
+└──────────────────────────────────────────────┘
+      │
+      ▼
+┌──────────────────────────────────────────────┐
+│ 3. scrypt Anahtar Türetimi (Salt [16B])     │ (128 MB RAM Maliyeti / Deneme)
+└──────────────────────────────────────────────┘
+      │
+      ▼
+┌──────────────────────────────────────────────┐
+│ 4. OpenSSL AES-256-GCM Şifreleme             │ (IV [12B] + Ciphertext + Tag [16B])
+└──────────────────────────────────────────────┘
+      │
+      ▼
+┌──────────────────────────────────────────────┐
+│ 5. Taşınabilir Sembol Alfabesi / Metin Çıktı │ (0600 Güvenli İzinler)
+└──────────────────────────────────────────────┘
+```
+
+- **Sıfır Sızıntı (Zero Metadata Leak):** Şifrelenmiş metin çıktısı dışarıdan bakıldığında rastgele sembollerden farksızdır; başlık, fotoğraf boyutu veya kamera bilgisi asla sızdırılmaz.
+- **Tahrifat Tespiti (AEAD Tamper Proof):** Dosyadaki tek bir harf veya bit değiştirilse dahi OpenSSL GCM doğrulama etiketi işlemi anında durdurur ve hiçbir çıktı yazılmaz.
+- **Güvenli İzinler:** Üretilen dosyalar yalnızca dosya sahibinin okuyabileceği `0600` Linux dosya izinleriyle oluşturulur.
+
+---
+
+## 🚀 Kurulum / Installation
 
 ### 1. Linux
 
-#### Method A: Flatpak (Recommended)
-
-[English] The easiest way to install and run PhotosCrypto on any Linux distribution is via Flatpak.
-
-[Turkce] Herhangi bir Linux dagitiminda PhotosCrypto uygulamasini kurup calistirmanın en kolay yolu Flatpak kullanmaktir.
+#### Seçenek A: Flatpak (Önerilen / Recommended)
+Tüm Linux dağıtımlarında bağımlılık derdi olmadan güvenli sandbox ortamında çalıştırmak için:
 
 ```bash
-git clone https://github.com/hunte-av/PhotosCrypto.git
-cd PhotosCrypto
+git clone https://github.com/hunte-av/photoscrypto.git
+cd photoscrypto
 flatpak install flathub org.freedesktop.Sdk//25.08
 flatpak-builder --user --install --force-clean build-dir io.github.hunte_av.PhotosCrypto.yml
 flatpak run io.github.hunte_av.PhotosCrypto
 ```
 
-#### Method B: Build from Source on Linux
+#### Seçenek B: Kaynak Koddan Derleme (Native Build)
+Sistem paket yöneticinizle derleme araçlarını ve kütüphaneleri kurun:
 
-[English] Install the required compiler, OpenSSL, zlib, GTK4, and Libadwaita development packages.
-
-[Turkce] Gerekli derleyici, OpenSSL, zlib, GTK4 ve Libadwaita gelistirme paketlerini yukleyin.
-
-- Ubuntu / Debian:
+**Ubuntu / Debian:**
 ```bash
 sudo apt update
 sudo apt install build-essential pkg-config libssl-dev zlib1g-dev libgtk-4-dev libadwaita-1-dev
 ```
 
-- Fedora:
+**Fedora / RHEL:**
 ```bash
 sudo dnf install gcc-c++ make pkgconf openssl-devel zlib-devel gtk4-devel libadwaita-devel
 ```
 
-- Arch Linux:
+**Arch Linux / Manjaro:**
 ```bash
 sudo pacman -S base-devel openssl zlib gtk4 libadwaita
 ```
 
-- Build and Install:
+**Derleme ve Kurulum:**
 ```bash
 make
-sudo make install
-photoscrypto-cli --help
+make test
+sudo make install # /usr/local/bin dizinine yükler
 ```
 
 ---
 
 ### 2. Windows
 
-[English]
-PhotosCrypto can be built on Windows using MSYS2 or Windows Subsystem for Linux (WSL). MSYS2 provides a native Windows binary that runs directly on your system.
+Windows üzerinde PhotosCrypto **MSYS2 (UCRT64)** ile yerel `.exe` olarak veya **WSL** (Windows Subsystem for Linux) üzerinden çalıştırılabilir.
 
-[Turkce]
-PhotosCrypto, MSYS2 veya WSL (Windows Subsystem for Linux) kullanilarak Windows uzerinde derlenebilir. MSYS2, sisteminizde dogrudan calisan yerel bir Windows calistirilabilir dosyasi olusturur.
-
-#### Step by Step via MSYS2 (UCRT64)
-
-1. [English] Download and install MSYS2 from msys2.org.
-   [Turkce] msys2.org adresinden MSYS2 programini indirip kurun.
-
-2. [English] Open the MSYS2 UCRT64 terminal and install the build tools and libraries:
-   [Turkce] MSYS2 UCRT64 terminalini acin ve gerekli araclar ile kutuphaneleri yukleyin:
+#### MSYS2 (UCRT64) ile Yerel Derleme:
+1. [msys2.org](https://www.msys2.org/) adresinden MSYS2'yi kurun.
+2. **MSYS2 UCRT64** terminalini açın ve bağımlılıkları yükleyin:
 ```bash
 pacman -Syu
-pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-make mingw-w64-ucrt-x86_64-openssl mingw-w64-ucrt-x86_64-zlib mingw-w64-ucrt-x86_64-gtk4 mingw-w64-ucrt-x86_64-libadwaita git
+pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-make mingw-w64-ucrt-x86_64-openssl \
+          mingw-w64-ucrt-x86_64-zlib mingw-w64-ucrt-x86_64-gtk4 mingw-w64-ucrt-x86_64-libadwaita git
 ```
-
-3. [English] Clone the repository and compile:
-   [Turkce] Projeyi indirin ve derleyin:
+3. Projeyi derleyin:
 ```bash
-git clone https://github.com/hunte-av/PhotosCrypto.git
-cd PhotosCrypto
+git clone https://github.com/hunte-av/photoscrypto.git
+cd photoscrypto
 mingw32-make
-```
-
-4. [English] Run the command-line tool or graphical interface:
-   [Turkce] Komut satiri aracini veya grafik arayuzunu calistirin:
-```bash
 ./photoscrypto-cli.exe --help
-./photoscrypto-gui.exe
 ```
 
 ---
 
 ### 3. macOS
 
-[English]
-PhotosCrypto can be installed on macOS using Homebrew. The command-line tool works natively, and the graphical interface works when GTK4 and Libadwaita are installed.
+macOS üzerinde Homebrew ile kolayca kurulur:
 
-[Turkce]
-PhotosCrypto, Homebrew kullanilarak macOS uzerinde kurulabilir. Komut satiri araci dogrudan calisir, grafik arayuz ise GTK4 ve Libadwaita yuklendiginde calisir.
-
-#### Step by Step via Homebrew
-
-1. [English] Open Terminal and install dependencies using Homebrew:
-   [Turkce] Terminal uygulamasini acin ve Homebrew ile bagimliliklari yukleyin:
 ```bash
+# 1. Bağımlılıkları yükleyin
 brew install openssl zlib pkg-config make gcc gtk4 libadwaita
-```
 
-2. [English] Configure environment variables for Homebrew paths:
-   [Turkce] Homebrew yollari icin ortam degiskenlerini tanimlayin:
-```bash
+# 2. PKG_CONFIG ortam değişkenlerini ayarlayın
 export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig:$(brew --prefix zlib)/lib/pkgconfig:$PKG_CONFIG_PATH"
-```
 
-3. [English] Clone the repository and compile:
-   [Turkce] Projeyi indirin ve derleyin:
-```bash
-git clone https://github.com/hunte-av/PhotosCrypto.git
-cd PhotosCrypto
+# 3. Derleyin
+git clone https://github.com/hunte-av/photoscrypto.git
+cd photoscrypto
 make
-```
-
-4. [English] Run the application:
-   [Turkce] Uygulamayi calistirin:
-```bash
 ./photoscrypto-cli --help
-./photoscrypto-gui
 ```
 
 ---
 
-## Command Line Usage Examples
+## 💻 Kullanım Kılavuzu / Usage
 
-### Encoding a Photo with Password
+### Komut Satırı (CLI)
 
-[English] Encrypts the photo with a password and compresses it into a text file.
-[Turkce] Fotografi sifreler, sikistirir ve guvenli bir metin dosyasina donusturur.
-
-```bash
-photoscrypto-cli encode my_photo.png safe_note.txt
+```text
+photoscrypto encode <photo> <output.txt> [options]
+photoscrypto decode <input.txt> [output] [options]
 ```
 
-### Decoding a Photo with Password
+| Seçenek / Flag | Açıklama (TR) | Description (EN) |
+|---|---|---|
+| `--force` | Var olan dosyanın üzerine yaz | Overwrite existing output file |
+| `--no-password` | Parola sormadan şifrele / geri yükle | Fast obfuscated encode without password |
+| `--password-stdin` | Parolayı stdin'den oku (otomasyon için) | Read password from standard input line |
+| `--max-attempts N` | N yanlış şifrede dosyayı yok et (1-10) | Self-destruct after N failed attempts |
+| `-h, --help` | Yardım mesajını göster | Display command-line help screen |
+| `-V, --version` | Sürüm bilgisini göster | Print binary version information |
 
-[English] Restores the original photo from the encoded text file using your password.
-[Turkce] Sifrenizi girerek orijinal fotografi metin dosyasindan geri cikarir.
-
-```bash
-photoscrypto-cli decode safe_note.txt restored_photo
-```
-
-### Encoding without Password (Fast Mode)
-
-[English] Compresses and hides the photo without asking for a password.
-[Turkce] Sifre sormadan fotografi sikistirir ve gizli metin dosyasina donusturur.
+#### Örnekler / Practical Examples:
 
 ```bash
-photoscrypto-cli encode my_photo.png safe_note.txt --no-password
-```
+# 1. Parolalı Fotoğraf Şifreleme (Terminalden şifre sorar, ekranda görünmez)
+photoscrypto-cli encode aile_fotografi.jpg gizli_not.txt
 
-### Decoding without Password
+# 2. Parolalı Fotoğrafı Geri Çözme (Orijinal uzantıyı otomatik tamamlar -> aile_fotografi.jpg)
+photoscrypto-cli decode gizli_not.txt aile_fotografi
 
-[English] Restores the file directly in one step.
-[Turkce] Dosyayi tek adimda dogrudan geri yukler.
+# 3. Şifresiz Hızlı Sıkıştırma ve Gizleme (Tek tıkla açılabilen arşiv)
+photoscrypto-cli encode belge.png guvenli_arsiv.txt --no-password
 
-```bash
-photoscrypto-cli decode safe_note.txt restored_photo
+# 4. Şifresiz Dosyayı Tek Adımda Çözme
+photoscrypto-cli decode guvenli_arsiv.txt belge
+
+# 5. Kendi Kendini İmha Korumasıyla Şifreleme (3 yanlış denemede dosyayı siler)
+photoscrypto-cli encode gizli.png safe.txt --max-attempts 3
 ```
 
 ---
 
-## Important Security Notes
+### Grafik Arayüz (GTK4 GUI)
 
-[English]
-- If you set a password and forget it, the photo cannot be recovered. There is no backdoor or master recovery key.
-- Choose a strong password with a mix of letters, numbers, and symbols for high security.
-- Encrypted files can be backed up or transferred safely as standard text files.
+Modern Libadwaita temalı grafik arayüzü başlatmak için:
 
-[Turkce]
-- Eger bir sifre belirler ve bu sifreyi unutursaniz, fotograf kurtariamaz. Hicbir arka kapi veya kurtarma anahtari bulunmamaktadir.
-- Yuksek guvenlik icin harf, rakam ve sembol karisimi iceren guclu bir sifre secin.
-- Sifrelenmis dosyalar standart metin dosyalari olarak guvenle yedeklenebilir veya baska cihazlara aktarilabilir.
+```bash
+photoscrypto-gui
+# veya Flatpak üzerinden:
+flatpak run io.github.hunte_av.PhotosCrypto
+```
+
+- **Sürükle-Bırak:** Fotoğrafınızı pencereye sürükleyin.
+- **Dinamik Kalkan:** Parolanızı yazarken 5 aşamalı kalkan ile şifre karmaşıklığını takip edin.
+- **Tek Tıkla Dönüştürme:** Saniyeler içinde metin dosyasına çevirin ya da geri çözün.
 
 ---
 
-## License
+## 🧪 Test ve Doğrulama / Tests
 
-[English] Distributed under the MIT License. See LICENSE for details.
-[Turkce] MIT Lisansi ile dagitilmaktadir. Ayrintilar icin LICENSE dosyasina bakiniz.
+Tüm kriptografik doğrulamaları, zlib sıkıştırma oranlarını, AEAD tahrifat tespitini ve round-trip tutarlılığını test etmek için:
+
+```bash
+make test
+```
+
+Beklenen çıktı:
+```text
+Running photoscrypto v1.1 tests...
+  [PASS] encode with password creates output
+  [PASS] output has mode 600
+  [PASS] zlib compression active (file size shrank from 320008B to 970B)
+  [PASS] round-trip with password is byte-identical (.png detected)
+  [PASS] wrong password rejected
+  [PASS] no output on wrong password
+  [PASS] encode with --no-password succeeds
+  [PASS] round-trip without password is byte-identical
+  [PASS] tampered file rejected by AES-GCM tag verification
+  [PASS] refuses to overwrite without --force
+  [PASS] --force overwrites
+  [PASS] does not write through symlinks
+  [PASS] unknown option rejected
+
+Result: 13 passed, 0 failed
+```
+
+---
+
+## ⚠️ Önemli Güvenlik Hatırlatmaları / Security Notice
+
+1. **Parolanızı Unutursanız Fotoğraf Kurtarılamaz:** Sistemde hiçbir arka kapı (backdoor) veya merkezi kurtarma anahtarı yoktur.
+2. **Kendi Kendini İmha Uyarısı:** `--max-attempts` seçeneği dosyanın üzerindeki deneme sayacını kullanır. Dosyanın önceden kopyasını alan bir saldırgana karşı koruma sağlamaz; asıl koruma her zaman güçlü ve uzun bir paroladır.
+3. **Güvenli Yedekleme:** Üretilen metin dosyaları UTF-8 uyumlu standart semboller içerir; bulutta, e-posta taslaklarında veya harici disklerde güvenle saklanabilir.
+
+---
+
+## 📄 Lisans / License
+
+Bu proje [MIT Lisansı](LICENSE) kapsamında açık kaynak olarak sunulmaktadır.
