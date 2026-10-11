@@ -28,50 +28,50 @@
 
 ---
 
-## 🌟 Unique Features & Distinctive Encryption System / Benzersiz Ozellikler ve Ozel Sifreleme Sistemi
+## Unique Features & Distinctive Encryption System / Benzersiz Ozellikler ve Ozel Sifreleme Sistemi
 
 [English]
-1. 🎭 Unconventional Custom Encryption and Steganographic Concealment:  
+1. Unconventional Custom Encryption and Steganographic Concealment:  
 PhotosCrypto does not use conventional image containers. Your photo is never stored in an image format like PNG or JPG. Instead, it is transformed into a pure text document filled with a unique alphabet of mysterious symbols. To an outside observer, antivirus scanner, or file explorer, the file looks like a random, meaningless text note. This makes it extremely difficult for anyone to even suspect that a photo is hidden inside.
 
-2. 🛡️ Impenetrable Security:  
+2. Impenetrable Security:  
 Even if someone discovers or suspects that the text file contains an image, they still cannot open or recover it. The underlying data is locked using hardware-accelerated AES-256-GCM authenticated encryption and scrypt key derivation with high memory cost. Without the exact passphrase, the text remains mathematically impossible to decode. Any attempt to tamper with or modify the text immediately fails integrity checks.
 
-3. 🗜️ Built-in Lossless Compression:  
+3. Built-in Lossless Compression:  
 Before encryption, image payloads are processed by a lossless zlib compression engine. This reduces file size by 40 percent to 80 percent, ensuring your encrypted text files take up minimal disk space.
 
-4. 🔑 Optional Password Freedom:  
+4. Optional Password Freedom:  
 Setting a password is completely up to the user. You can lock your files with a strong passphrase, or use the fast mode without a password to quickly disguise your photos into text notes for one-click restoration.
 
-5. 🔍 Intelligent Automatic Format Restoration:  
+5. Intelligent Automatic Format Restoration:  
 When you decode the text file, PhotosCrypto automatically detects the original file type such as PNG, JPG, WEBP, GIF, or BMP and restores your photo with its original quality and file extension.
 
-6. 🔰 Visual 5-Stage Security Shield:  
+6. Visual 5-Stage Security Shield:  
 The graphical interface includes a dynamic security shield that evaluates your password in real time based on lowercase letters, uppercase letters, digits, and special characters, helping you create resilient passphrases.
 
-7. 💻 Unified Dual Interface:  
+7. Unified Dual Interface:  
 Includes both an intuitive GTK4 desktop interface and a fast, standalone command-line tool for power users and automation scripts.
 
 [Turkce]
-1. 🎭 Alisilmisin Disinda Kendine Has Sifreleme ve Kamuflaj Sistemi:  
+1. Alisilmisin Disinda Kendine Has Sifreleme ve Kamuflaj Sistemi:  
 PhotosCrypto siradan resim formatlarini veya bilindik dosya kaplarini kullanmaz. Fotograflariniz asla PNG veya JPG gibi bir gorsel formatinda saklanmaz. Bunun yerine, ozel bir sembol alfabesi kullanilarak tamamen siradan gorunumlu bir metin belgesine donusturulur. Dosya yoneticisinde, virus tarayicilarinda veya disaridan bakan birinin gozunde bu dosya yalnizca anlamsiz karakterlerden olusan siradan bir yazi notudur. Bu sayede dosyanin icinde bir fotograf saklandiginin fark edilmesi ve suphe cekmesi neredeyse imkansiz hale gelir.
 
-2. 🛡️ Asilamaz Cift Katmanli Koruma:  
+2. Asilamaz Cift Katmanli Koruma:  
 Bir kisi bu metin dosyasinin icinde bir fotograf oldugunu anlasa veya bundan suphelense bile, sifreleme mekanizmasi sayesinde dosyayi asla acamaz ve kurtaramaz. Veriler, yuksek bellek maliyetli scrypt anahtar algoritmasi ve AES-256-GCM kimlik dogrulamali sifreleme ile kilitlenir. Dogru sifre olmadan bu metni resme geri dondurmek matematiksel olarak imkansizdir. Metin uzerinde yapilacak en ufak bir degisiklik veya tahrifat ise guvenlik etiketi tarafindan aninda reddedilir.
 
-3. 🗜️ Dahili Kayipsiz Veri Sikistirma:  
+3. Dahili Kayipsiz Veri Sikistirma:  
 Fotograflar sifrelenmeden once dahili zlib motoru ile sikistirilir. Bu islem dosya boyutunu yuzde 40 ile yuzde 80 arasinda kuculterek metin dosyasinin diskte minimum yer kaplamasini saglar.
 
-4. 🔑 Istege Bagli Parola Secenegi:  
+4. Istege Bagli Parola Secenegi:  
 Sifre koymak tamamen kullanicinin tercihine birakilmistir. Ister cok guclu bir sifreyle tam guvenlik saglayabilir, isterseniz de tek tikla kolayca geri yuklemek icin sifresiz mod ile fotograflarinizi aninda metin dosyasina donusturebilirsiniz.
 
-5. 🔍 Akilli ve Otomatik Format Kurtarma:  
+5. Akilli ve Otomatik Format Kurtarma:  
 Metin dosyasini cozdugunuzde PhotosCrypto orijinal dosya turunu (PNG, JPG, WEBP, GIF, BMP vb.) otomatik olarak tanir ve fotografinizi sifir kalite kaybiyla dogru uzantisiyla geri cikarir.
 
-6. 🔰 5 Kademeli Gorsel Guvenlik Kalkani:  
+6. 5 Kademeli Gorsel Guvenlik Kalkani:  
 Grafik arayuz, sifrenizi yazarken buyuk harf, kucuk harf, rakam ve sembol cesitliligini analiz ederek guvenlik seviyenizi anlik olarak gosteren dinamik bir kalkan widget'ina sahiptir.
 
-7. 💻 Birlestirilmis Cift Arayuz:  
+7. Birlestirilmis Cift Arayuz:  
 Hem modern ve sade GTK4 masaustu grafik arayuzunu hem de gelismis kullanicilar ve scriptler icin bagimsiz komut satiri aracini tek bir catida sunar.
 
 ---
@@ -79,14 +79,14 @@ Hem modern ve sade GTK4 masaustu grafik arayuzunu hem de gelismis kullanicilar v
 ## ⚡ Performance & Architecture / Performans ve Mimari
 
 [English]
-- 🚀 Native Speed: Built in pure C++17 with optimized stream buffers, ensuring near-instantaneous encoding and decoding even for high-resolution images.
-- 🧠 Minimal Memory Footprint: Memory is allocated in managed buffers and securely cleared immediately upon completion of the cryptographic operation.
-- 🔐 Secure File Permissions: Output files are created with restricted file access permissions (0600 on Linux), ensuring other user accounts cannot inspect your files.
+-  Native Speed: Built in pure C++17 with optimized stream buffers, ensuring near-instantaneous encoding and decoding even for high-resolution images.
+-  Minimal Memory Footprint: Memory is allocated in managed buffers and securely cleared immediately upon completion of the cryptographic operation.
+-  Secure File Permissions: Output files are created with restricted file access permissions (0600 on Linux), ensuring other user accounts cannot inspect your files.
 
 [Turkce]
-- 🚀 Yerel Hiz: Saf C++17 ile yazilmis optimize akis tamponlari sayesinde yuksek cozunurluklu fotograflarda bile anlik donusturme performansi sunar.
-- 🧠 Dusuk Bellek Kullanimi: Bellek tahsisleri kontrollu yapilir ve kriptografik islem biter bitmez guvenle sifirlanir.
-- 🔐 Guvenli Dosya Izinleri: Olusturulan metin dosyalari yalnizca dosya sahibinin erisebilecegi kisitli izinlerle (Linux uzerinde 0600) uretilir.
+-  Yerel Hiz: Saf C++17 ile yazilmis optimize akis tamponlari sayesinde yuksek cozunurluklu fotograflarda bile anlik donusturme performansi sunar.
+-  Dusuk Bellek Kullanimi: Bellek tahsisleri kontrollu yapilir ve kriptografik islem biter bitmez guvenle sifirlanir.
+-  Guvenli Dosya Izinleri: Olusturulan metin dosyalari yalnizca dosya sahibinin erisebilecegi kisitli izinlerle (Linux uzerinde 0600) uretilir.
 
 ---
 
@@ -94,7 +94,7 @@ Hem modern ve sade GTK4 masaustu grafik arayuzunu hem de gelismis kullanicilar v
 
 ### 🐧 1. Linux Kurulumu / Linux Installation
 
-#### 📦 Method A: Flatpak (Recommended / Onerilen)
+####  Method A: Flatpak (Recommended / Onerilen)
 
 [English] Install and run PhotosCrypto seamlessly in an isolated sandbox environment:  
 [Turkce] PhotosCrypto uygulamasini guvenli bir sandbox ortaminda kolayca kurup calistirin:
@@ -107,7 +107,7 @@ flatpak-builder --user --install --force-clean build-dir io.github.hunte_av.Phot
 flatpak run io.github.hunte_av.PhotosCrypto
 ```
 
-#### ⚙️ Method B: Native Build from Source / Kaynak Koddan Derleme
+####  Method B: Native Build from Source / Kaynak Koddan Derleme
 
 [English] Install dependencies and compile natively:  
 [Turkce] Bagimliliklari yukleyin ve yerel olarak derleyin:
@@ -204,30 +204,30 @@ make
 
 ---
 
-## 💻 Command Line Usage / Komut Satiri Kullanimi
+##  Command Line Usage / Komut Satiri Kullanimi
 
-### 1. 🔒 Encode with Password / Parolali Sifreleme
+### 1.  Encode with Password / Parolali Sifreleme
 [English] Encrypts the photo and turns it into a disguised text file:  
 [Turkce] Fotografi sifreler ve siradan bir metin belgesine donusturur:
 ```bash
 photoscrypto-cli encode my_photo.png secret_notes.txt
 ```
 
-### 2. 🔓 Decode with Password / Parolali Cozme
+### 2.  Decode with Password / Parolali Cozme
 [English] Restores the disguised text file back into the original photo:  
 [Turkce] Metin belgesini sifrenizi girerek orijinal fotograf haline geri cevirir:
 ```bash
 photoscrypto-cli decode secret_notes.txt restored_photo
 ```
 
-### 3. ⚡ Encode without Password (Fast Mode) / Sifresiz Hizli Gizleme
+### 3.  Encode without Password (Fast Mode) / Sifresiz Hizli Gizleme
 [English] Disguises the photo into text without requiring a password:  
 [Turkce] Sifre sormadan fotografi hizlica metin dosyasina donusturur:
 ```bash
 photoscrypto-cli encode my_photo.png secret_notes.txt --no-password
 ```
 
-### 4. 🚀 Decode without Password / Sifresiz Geri Yukleme
+### 4.  Decode without Password / Sifresiz Geri Yukleme
 [English] Instantly restores the photo with a single command:  
 [Turkce] Tek komutla fotografi aninda geri yukler:
 ```bash
@@ -236,15 +236,15 @@ photoscrypto-cli decode secret_notes.txt restored_photo
 
 ---
 
-## 🛡️ Critical Security Reminders / Kritik Guvenlik Hatirlatmalari
+## ⚠️ Critical Security Reminders / Kritik Guvenlik Hatirlatmalari
 
 [English]
-- ⚠️ If you set a password and forget it, the photo cannot be recovered. There are no backdoors or master keys.
+- 🛡️ If you set a password and forget it, the photo cannot be recovered. There are no backdoors or master keys.
 - 📄 Because the output is a standard text file, you can safely store it anywhere without drawing attention.
 - 🔒 Even if an intruder inspects the text file and realizes it holds data, the AES-256-GCM encryption prevents unauthorized extraction.
 
 [Turkce]
-- ⚠️ Sifre belirleyip unutursaniz, fotografi geri getirmek mumkun degildir. Hicbir arka kapi veya kurtarma anahtari bulunmaz.
+- 🛡️ Sifre belirleyip unutursaniz, fotografi geri getirmek mumkun degildir. Hicbir arka kapi veya kurtarma anahtari bulunmaz.
 - 📄 Cikti siradan bir metin dosyasi oldugu icin, dikkat cekmeden her yerde guvenle saklanabilir.
 - 🔒 Bir saldirgan metin belgesini inceleyip icinde bir veri oldugunu anlasa bile, AES-256-GCM sifrelemesi sayesinde dogru parola olmadan dosyayi asla acamaz.
 
