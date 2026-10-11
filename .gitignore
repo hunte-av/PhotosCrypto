@@ -1,0 +1,13 @@
+/photoscrypto-cli
+/photoscrypto-gui
+/photoscrypto-asan
+/build-dir/
+/.flatpak-builder/
+/repo/
+*.flatpak
+*.o
+*.txt.bak
+.env
+.env.*
+*.pem
+*.key

@@ -1,0 +1,4 @@
+ingilizce yap
+fotoğrafı şifrelemeden önce dosyaya isim verebilme seçneği olsun 
+fotoğrafı ilk başta hangi formatta çevirdiyse düzelttikten sonrada aynı formata çevirir 
+seçenek sunsun yanlış şifrede fotoğrafı imha etme gibi ama opsiyonel olsun en başta şifrelerken sorsun ve sonradan değiştirilmesin

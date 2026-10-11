@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=PhotosCrypto
+Comment=Encrypt files into plain symbol text and restore them
+Exec=photoscrypto
+Icon=io.github.hunte_av.PhotosCrypto
+Terminal=false
+Type=Application
+Categories=Graphics;Utility;Security;
+StartupNotify=true

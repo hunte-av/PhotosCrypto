@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.hunte_av.PhotosCrypto</id>
+  <name>PhotosCrypto</name>
+  <summary>Hide and encrypt files inside plain symbol text</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <developer id="io.github.hunte_av">
+    <name>hunte-av</name>
+  </developer>
+  <description>
+    <p>
+      PhotosCrypto encrypts a file with your own password (scrypt + AES-256-GCM) and stores it as plain text made of a private symbol alphabet. The original name and format are kept inside the encrypted data and restored when decoding.
+      An optional self-destruct mode deletes the file after a number of wrong passwords that you choose when encoding.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.hunte_av.PhotosCrypto.desktop</launchable>
+  <url type="homepage">https://github.com/hunte-av/photoscrypto</url>
+  <url type="bugtracker">https://github.com/hunte-av/photoscrypto/issues</url>
+  <provides>
+    <binary>photoscrypto</binary>
+    <binary>photoscrypto-cli</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="1.1.0" date="2026-10-11">
+      <description>
+        <p>Added automatic zlib payload compression and optional password protection.</p>
+      </description>
+    </release>
+    <release version="1.0.0" date="2026-10-09"/>
+  </releases>
+</component>

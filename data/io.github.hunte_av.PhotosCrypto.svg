@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <!-- Background: Sophisticated Dark Graphite -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e2029"/>
+      <stop offset="100%" stop-color="#14151b"/>
+    </linearGradient>
+
+    <!-- Photo Card Background: Deep Matte Navy-Slate -->
+    <linearGradient id="photoSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a303c"/>
+      <stop offset="100%" stop-color="#1f242d"/>
+    </linearGradient>
+
+    <!-- Lock Body: Matte Champagne Gold / Brass -->
+    <linearGradient id="lockBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#cbd5e1"/>
+    </linearGradient>
+
+    <!-- Mountain Silhouette Colors (Natural Muted) -->
+    <linearGradient id="mountBack" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+
+    <linearGradient id="mountFront" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base Icon Squircle -->
+  <rect width="128" height="128" rx="28" fill="url(#bgGrad)"/>
+  <rect x="1" y="1" width="126" height="126" rx="27" fill="none" stroke="#333846" stroke-width="1.2"/>
+
+  <!-- Photo Card Silhouette -->
+  <g id="photoCard">
+    <!-- Photo Outer Frame -->
+    <rect x="22" y="24" width="84" height="66" rx="10" fill="url(#photoSky)" stroke="#64748b" stroke-width="2.5"/>
+
+    <!-- Clip Path to keep mountains inside the photo card -->
+    <clipPath id="cardClip">
+      <rect x="22" y="24" width="84" height="66" rx="10"/>
+    </clipPath>
+
+    <g clip-path="url(#cardClip)">
+      <!-- Minimalist Sun / Light Source (Warm Muted Cream) -->
+      <circle cx="44" cy="42" r="7" fill="#f1f5f9" opacity="0.9"/>
+
+      <!-- Distant Mountain Silhouette -->
+      <path d="M20 90 L48 56 L68 76 L88 52 L110 90 Z" fill="url(#mountBack)"/>
+
+      <!-- Foreground Mountain Silhouette -->
+      <path d="M20 90 L38 68 L56 90 L76 66 L108 90 Z" fill="url(#mountFront)"/>
+    </g>
+  </g>
+
+  <!-- Minimalist Security Padlock (Matte, Non-Neon) -->
+  <g id="securityLock" transform="translate(68, 62)">
+    <!-- Lock Shadow -->
+    <rect x="3" y="15" width="34" height="26" rx="6" fill="#0b0c10" opacity="0.45"/>
+
+    <!-- Shackle (Brushed Steel) -->
+    <path d="M12 16 V9 A8 8 0 0 1 28 9 V16" fill="none" stroke="#f1f5f9" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Lock Body (Matte Silver-Titanium) -->
+    <rect x="5" y="16" width="30" height="24" rx="6" fill="url(#lockBody)" stroke="#94a3b8" stroke-width="1.5"/>
+
+    <!-- Keyhole (Dark Subtle Inset) -->
+    <circle cx="20" cy="25" r="2.2" fill="#1e2029"/>
+    <path d="M20 26.5 L20 31.5" stroke="#1e2029" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+</svg>

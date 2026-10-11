@@ -1,0 +1,24 @@
+app-id: io.github.hunte_av.PhotosCrypto
+runtime: org.gnome.Platform
+runtime-version: '50'
+sdk: org.gnome.Sdk
+command: photoscrypto
+finish-args:
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --filesystem=home
+modules:
+  - name: photoscrypto
+    buildsystem: simple
+    build-commands:
+      - make PREFIX=/app
+      - make PREFIX=/app install
+    sources:
+      - type: dir
+        path: .
+        skip:
+          - .flatpak-builder
+          - build-dir
+          - repo
+          - photoscrypto-cli
+          - photoscrypto-gui

@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-test:
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        compiler: [g++, clang++]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y build-essential clang pkg-config libssl-dev libgtk-4-dev libadwaita-1-dev
+      - name: Build (CLI + GUI)
+        run: make CXX=${{ matrix.compiler }}
+      - name: Test
+        run: make test
+      - name: Test with ASan + UBSan
+        run: |
+          ${{ matrix.compiler }} -std=c++17 -g -O1 -fsanitize=address,undefined -fno-omit-frame-pointer \
+            src/core/*.cpp src/cli/*.cpp -o photoscrypto-asan -lcrypto
+          ./tests/run_tests.sh ./photoscrypto-asan
+
+  flatpak:
+    runs-on: ubuntu-24.04
+    container:
+      image: ghcr.io/flathub-infra/flatpak-github-actions:gnome-50
+      options: --privileged
+    steps:
+      - uses: actions/checkout@v4
+      - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
+        with:
+          bundle: photoscrypto.flatpak
+          manifest-path: io.github.hunte_av.PhotosCrypto.yml
